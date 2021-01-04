@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+    head
+        title Item List
+    body
+        header
+            h1 Hello
+    block content
+            h2 Welcome
+            form(action='/list' method='POST')
+                input(type='text' name='username')
+                button(type='submit') Submit
