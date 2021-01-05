@@ -1,3 +1,8 @@
 extends index
 
 block content
+
+    form(action='/login' method='POST')
+        label Please enter the list item
+        input(type='text' name="list_item")
+        button(type='submit') Submit

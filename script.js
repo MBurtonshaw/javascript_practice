@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const app = express();
+const list = [];
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -18,12 +19,21 @@ app.post("/", (req, res) => {
 
 //LIST///////////////////////////////////////////////////////////////////////////////////////////
 app.get("/list", (req, res) => {
-    res.render("list", { name: req.cookies.username });
+    res.render("list", { name: req.cookies.username, list_item: req.cookies.list_item });
 });
 //The redirect allows the cookie to be stored
 app.post("/list", (req, res) => {
     res.cookie("username", req.body.username);
-    res.redirect("list");
+    res.redirect("/list");
+});
+
+app.get("/login", (req, res) => {
+    res.render("login", { name: req.cookies.username, list_item: req.cookies.list_item});
+});
+
+app.post("/login", (req, res) => {
+    res.cookie("list_item", req.body.list_item);
+    res.redirect("/login");
 });
 
 //SERVER////////////////////////////////////////////////////////////////////////////////////////////
