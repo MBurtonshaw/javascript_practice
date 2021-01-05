@@ -4,9 +4,9 @@ html(lang="en")
         title Item List
     body
         header
-            h1 Hello
+            h1 Hello #{name}
     block content
-            h2 Welcome
-            form(action='/list' method='POST')
-                input(type='text' name='username')
-                button(type='submit') Submit
+        form(action='/list' method='POST')
+            label Please enter your name
+            input(type='text' name='username')
+            button(type='submit') Submit
