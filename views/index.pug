@@ -1,12 +1,6 @@
 doctype html
 html(lang="en")
-    head
         title Item List
+        link(rel="stylesheet", href="static/stylesheets/style.css")
     body
-        header
-            h1 Hello #{name}
-    block content
-        form(action='/list' method='POST')
-            label Please enter your name
-            input(type='text' name='username')
-            button(type='submit') Submit
+        block content

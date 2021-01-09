@@ -1,0 +1,11 @@
+extends index
+
+block content
+    h1#headMessage  Welcome 
+        p#mainParagraph
+          | This is a paragraph whose text is pretty neceessary but the value of which is not. I'm adding this purely for the context of bulk and salmon. Cheese the prices and understand that I just want this to be a paragraph of at least some weight. Hopefully I've typed enough by now and hopefully this future pizza is some dank shit.
+
+        form(method='POST')
+            label Please enter your name
+            input(type='text' name='username')
+            button(type='submit') Submit
